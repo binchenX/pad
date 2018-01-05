@@ -6,14 +6,12 @@ FROM ubuntu:14.04
 
 MAINTAINER Bin Chen <bin.chen@linaro.org>
 
-RUN apt-get update
-RUN apt-get install -y python python-pip wget
-RUN apt-get install android-tools-fsutils
+RUN apt-get update && apt-get install -y \
+  python python-pip wget \
+  android-tools-fsutils
 
-ADD . /poplar
-
-VOLUME ["/poplar/flash_input", "/poplar/flash_output"]
-
-WORKDIR /poplar
-RUN wget https://raw.githubusercontent.com/pierrchen/pat/master/uflash.py
+RUN mkdir -p /poplar
 COPY tools/mkimage /usr/bin
+VOLUME ["/poplar/flash_input", "/poplar/flash_output"]
+WORKDIR /poplar
+RUN wget -nv -O uflash.py https://raw.githubusercontent.com/pierrchen/pat/master/uflash.py
