@@ -15,5 +15,5 @@ ADD . /poplar
 VOLUME ["/poplar/flash_input", "/poplar/flash_output"]
 
 WORKDIR /poplar
-COPY tools/uflash.py .
+RUN wget https://raw.githubusercontent.com/pierrchen/pat/master/uflash.py
 COPY tools/mkimage /usr/bin
