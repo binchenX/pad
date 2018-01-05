@@ -5,7 +5,7 @@
 1. Donwload
 
 ```
-git clone xxx ~/poplar_flash_docker
+git clone git@github.com:pierrchen/pad.git ~/poplar_flash_docker
 cd poplar_flash_docker
 ```
 
