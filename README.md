@@ -12,7 +12,7 @@ cd poplar_flash_docker
 2. Build Docker image
 
 ```
-sudo docker build -t linaro/android_poplar .
+sudo docker build -t binc/poplar .
 ```
 
 3. Run the flash tool in the Docker
