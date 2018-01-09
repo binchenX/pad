@@ -18,3 +18,7 @@ VOLUME ["/poplar/flash_input", "/poplar/flash_output"]
 WORKDIR /poplar
 RUN wget -nv -O uflash.py http://raw.githubusercontent.com/pierrchen/pat/master/uflash.py
 
+ENTRYPOINT ["python", "uflash.py", "-i", "/poplar/flash_input", "-o", "/poplar/flash_output"]
+
+# default to all Android partitions, specify specific on when running the container
+CMD []
